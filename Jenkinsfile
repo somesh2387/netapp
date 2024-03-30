@@ -5,7 +5,7 @@ pipeline {
     stage('Test') {
       agent any
       steps {
-        sh 'pytest testRoutes.py'
+        sh 'pytest test.py'
       }
     }
     stage('Docker Build') {
