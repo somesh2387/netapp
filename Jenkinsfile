@@ -11,15 +11,6 @@ pipeline {
         }
       }
     }
-    stage('checkout') {
-      agent any
-      steps {
-        git branch: 'main',
-        credentialsId: 'somesh7292',
-        url: 'https://github.com/somesh7292/netapp-k8s.git'
-        sh "ls -lat"
-      }
-    }
     stage('Docker Build') {
       agent any
       steps {
