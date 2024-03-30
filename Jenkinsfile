@@ -45,7 +45,6 @@ pipeline {
           sh "git add ."
           sh "git commit -m 'Deploying image tag $BUILD_NUMBER'"
           sh "git push origin main"
-        }
       }
     }
   }
