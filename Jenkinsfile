@@ -41,7 +41,7 @@ pipeline {
         git branch: 'main',
         credentialsId: 'somesh7292',
         url: 'https://github.com/somesh7292/netapp-k8s.git'
-        sh "yq -i '.spec.template.spec.containers[0].image='docker.io/somesh7292/netapp:$BUILD_NUMBER'' k8s/deployment.yaml"
+        sh "yq -i '.spec.template.spec.containers[0].image="docker.io/somesh7292/netapp:$BUILD_NUMBER"' k8s/deployment.yaml"
         sh "git add ."
         sh "git commit -m 'Deploying image tag $BUILD_NUMBER'"
         sh "git push"
