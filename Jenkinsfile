@@ -4,9 +4,11 @@ pipeline {
   stages {
     stage('Test') {
       agent any
-      withPythonEnv('python3') {
-        sh 'pip3 install -r requirements.txt'
-        sh 'pytest mytest.py'
+      steps {
+        withPythonEnv('python3') {
+          sh 'pip3 install -r requirements.txt'
+          sh 'pytest mytest.py'
+        }
       }
     }
     stage('Docker Build') {
