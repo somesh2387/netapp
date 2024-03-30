@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: netapp
+    spec:
+      containers:
+      - image: docker.io/somesh7292/netapp:latest
+        name: netapp
+        ports:
+        - containerPort: 8083
