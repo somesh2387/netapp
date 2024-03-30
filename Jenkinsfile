@@ -4,8 +4,9 @@ pipeline {
   stages {
     stage('Test') {
       agent any
-      steps {
-        sh 'pytest test.py'
+      withPythonEnv('python3') {
+        sh 'pip3 install -r requirements.txt'
+        sh 'pytest mytest.py'
       }
     }
     stage('Docker Build') {
