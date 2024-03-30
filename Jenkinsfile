@@ -30,7 +30,6 @@ pipeline {
       agent any
       steps {
             git branch: 'main',
-                credentialsId: 'somesh7292',
                 url: 'git@github.com:somesh7292/netapp-k8s.git'
               sh "ls -lat"
       }
