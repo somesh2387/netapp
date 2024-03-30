@@ -43,7 +43,7 @@ pipeline {
         url: 'https://github.com/somesh7292/netapp-k8s.git'
         sh "yq -i '.spec.template.spec.containers[0].image='docker.io/somesh7292/netapp:$BUILD_NUMBER'' deployment.yaml"
         sh "git add ."
-        sh "git commit -m "Deploying image tag $BUILD_NUMBER"
+        sh "git commit -m 'Deploying image tag $BUILD_NUMBER'"
         sh" git push"
       }
     }
