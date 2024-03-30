@@ -5,7 +5,7 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t somesh7292/netapp:latest .'
+          app = docker.build("getintodevops/hellonode")
       }
     }
   }
