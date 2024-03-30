@@ -38,7 +38,7 @@ pipeline {
     stage('Manifest push') {
       agent any
       steps {
-        sshagent (credentials: ['somesh7292'])
+        withCredentials([sshUserPrivateKey(credentialsId: "somesh7292", keyFileVariable: 'key')])
         {
           git branch: 'main',
           // credentialsId: 'somesh7292',
