@@ -12,6 +12,7 @@ pipeline {
       }
     }
     stage('checkout') {
+      agent any
       steps {
         git branch: 'main',
         credentialsId: somesh7292,
